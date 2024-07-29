@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамичный Интерфейс</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .input-box {
+            margin-bottom: 20px;
+        }
+        #output {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-box">
+            <label for="text-input">Введите текст:</label>
+            <input type="text" id="text-input" placeholder="Введите что-то...">
+        </div>
+        <div id="output">Ваш текст появится здесь</div>
+    </div>
+
+    <script>
+        const input = document.getElementById('text-input');
+        const output = document.getElementById('output');
+
+        input.addEventListener('input', () => {
+            output.textContent = input.value || 'Ваш текст появится здесь';
+        });
+    </script>
+</body>
+</html>
